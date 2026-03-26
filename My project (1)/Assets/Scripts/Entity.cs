@@ -28,7 +28,7 @@ public class Entity : MonoBehaviour
     public IEnumerator MaxEntityThrowMSG()
     {
         string msg = "Max Entity reached. Can not spawn anymore. Please delete Entities before trying again.";
-        // Set the error message to msg with show the text
+        // Set the error message to msg and show the text
         if (msgMaxEntity != null)
         {
             msgMaxEntity.text = msg;
@@ -61,6 +61,11 @@ public class Entity : MonoBehaviour
             StartCoroutine(MaxEntityThrowMSG());
             return;
         }
+    }
+
+    public void move()
+    {
+        throw new System.NotImplementedException();
     }
 
     // TESTING 
