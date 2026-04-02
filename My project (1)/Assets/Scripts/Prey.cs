@@ -1,51 +1,42 @@
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Prey : MonoBehaviour, Animal, Entity
+public class Prey : Entity, Animal
 {
-    private int totalEntity = 0;  
     public int maxAnimals = 100; //limit for ANIMAL spawn
-    public string msgMaxEntity = " ";
+    public string predatorType;
+    public GameObject currentPredator = null;
+    public NavMeshAgent agent;
 
-    public bool MaxEntityReached (int totalEntity)  
+
+    private void Start()
     {
-        if (totalEntity > maxAnimals) 
-            return true;
-        else 
-            return false;
-    }
-    public void MaxEntityThrowMSG() 
-    {
-        msgMaxEntity = "Max number of animals reached. Can not spawn anymore.\n";
-
-        //display message on screen
-
-        // Gameobject.text.setActive(true) to show message
-        // Wait 2 seconds 
-        // GameObject.message.setActive(false) to hide message
-    }
-
-    public void move()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void spawn()
-    {
-        if (MaxEntityReached (totalEntity)) { 
-
-            // ~spawn code here~
-            
-            totalEntity++;
-
-        } else //don't spawn anything if limit is reached
-        {
-            MaxEntityThrowMSG();
-            return;
-        }
+        agent = GetComponent<NavMeshAgent>();
     }
 
     public void behavior()
     {
         throw new System.NotImplementedException();
+    }
+
+    public void flee(Transform chaser)
+    {
+        Vector3 directionToMove = transform.position - chaser.position;
+        Vector3 pointRunningTowards = transform.position + directionToMove.normalized * 10;
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(pointRunningTowards, out hit, 10, NavMesh.AllAreas))
+        {
+            // Set the destination to the valid point on the NavMesh
+            agent.SetDestination(hit.position);
+        }
+    }
+    protected void Update()
+    {
+        currentPredator =  detectNearby(predatorType);
+        if (currentPredator != null)
+        {
+            flee(currentPredator.transform);
+        }
     }
 }

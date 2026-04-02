@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Objects : MonoBehaviour, Plant, Entity
+public class Objects : Entity, Plant
 {
     private int totalEntity = 100;
      public int maxObjects = 100; //limit for OBJECT spawn
