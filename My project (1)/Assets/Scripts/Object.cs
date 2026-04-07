@@ -5,8 +5,8 @@ using TMPro;
 using UnityEngine.InputSystem;
 public class Objects : Entity, Plant
 {
-     public int maxObjects = 100; //limit for OBJECT spawn
-     public static int totalObjects = 0;
+    public int maxObjects = 100; //limit for OBJECT spawn
+    public static int totalObjects = 0;
 
     public bool MaxObjectReached(int totalObjects)
     {
@@ -60,6 +60,7 @@ public class Objects : Entity, Plant
             }
         }
     }
+    // The rest follow a extremely similar format (GRASS/TREE/ROCK)
     public void grass()
     {
         if (Keyboard.current.gKey.wasPressedThisFrame)
