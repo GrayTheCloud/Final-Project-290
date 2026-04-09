@@ -4,15 +4,15 @@ using System.Collections;
 using TMPro;
 using UnityEngine.InputSystem;
 
-public abstract class Entity : MonoBehaviour
+public class Entity : MonoBehaviour
 {
     public float detectionDistance;
 
     // Move these to an entity handler class {
         // Tracks total # of entities spawned
-        public int totalEntity = 0;
+        public static int totalEntity = 0;
         // The text that holds error msg and will be shown when totalEntity > max capacity
-        public TextMeshProUGUI msgMaxEntity;
+        public TextMeshProUGUI msgMax;
 
         // Checks to see whether max capacity has been reached
         public bool MaxEntityReached(int totalEntity)
@@ -32,17 +32,17 @@ public abstract class Entity : MonoBehaviour
         {
             string msg = "Max Entity reached. Can not spawn anymore. Please delete Entities before trying again.";
             // Set the error message to msg and show the text
-            if (msgMaxEntity != null)
+            if (msgMax != null)
             {
-                msgMaxEntity.text = msg;
-                msgMaxEntity.gameObject.SetActive(true);
+                msgMax.text = msg;
+                msgMax.gameObject.SetActive(true);
             }
             // Leave the text shown for 2 seconds
             yield return new WaitForSeconds(2f);
             // Hide the message now that 2 seconds have passed
-            if (msgMaxEntity != null)
+            if (msgMax != null)
             {
-                msgMaxEntity.gameObject.SetActive(false);
+                msgMax.gameObject.SetActive(false);
             }
         }
 
@@ -69,9 +69,9 @@ public abstract class Entity : MonoBehaviour
         // TESTING 
         void Start()
         {
-            if (msgMaxEntity != null)
+            if (msgMax == null)
             {
-                msgMaxEntity.gameObject.SetActive(false);
+                msgMax.gameObject.SetActive(false);
             }
         }
 
