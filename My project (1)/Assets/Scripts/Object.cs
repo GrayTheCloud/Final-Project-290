@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 public class Objects : Entity, Plant
 {
-    public int maxObjects = 100; //limit for OBJECT spawn
+    public int maxObjects = 100; // limit for OBJECT spawn
     public static int totalObjects = 0;
 
     public bool MaxObjectReached(int totalObjects)
@@ -20,7 +20,7 @@ public class Objects : Entity, Plant
         }
     }
    
-   // Throws error message when max capacity has been reached. 
+    // Throws error message when max capacity has been reached. 
     public IEnumerator MaxObjectThrowMSG()
     {
         string msg = "Max Objects reached. Can not spawn anymore. Please delete Objects before trying again.";
@@ -38,7 +38,6 @@ public class Objects : Entity, Plant
             msgMax.gameObject.SetActive(false);
         }
     }
-
     // Spawns flowers (0 - 5) randomly and increment totalObjects. If Max reached, then throw message
     public void flower()
     {
@@ -60,7 +59,7 @@ public class Objects : Entity, Plant
             }
         }
     }
-    // The rest follow a extremely similar format (GRASS/TREE/ROCK)
+    // The rest follow a extremely similar format to FLOWER -> (GRASS/TREE/ROCK)
     public void grass()
     {
         if (Keyboard.current.gKey.wasPressedThisFrame)
