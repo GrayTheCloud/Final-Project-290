@@ -34,7 +34,10 @@ public class Predator : Entity, Animal
         if (currentPrey != null)
         {
             chase(currentPrey.transform);
-            Debug.Log(Vector3.Distance(transform.position, currentPrey.transform.position));
+<<<<<<< Updated upstream
+=======
+            // Debug.Log(Vector3.Distance(transform.position, currentPrey.transform.position));
+>>>>>>> Stashed changes
             if( Vector3.Distance(transform.position, currentPrey.transform.position) < 1.2)
             {
                 currentPrey.SetActive(false);
@@ -44,7 +47,10 @@ public class Predator : Entity, Animal
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"{collision.gameObject.name} has hit");
+<<<<<<< Updated upstream
+=======
+        // Debug.Log($"{collision.gameObject.name} has hit");
+>>>>>>> Stashed changes
         if ( collision.gameObject.name == preyType)
         {
             collision.gameObject.SetActive(false);
