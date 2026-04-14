@@ -15,7 +15,7 @@ public class Utility : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        EntityHandler entityHandler = this.GetComponent<EntityHandler>();
+        entityHandler = this.GetComponent<EntityHandler>();
 
         //meteor initial position + hidden
         meteor.SetActive(false);
@@ -45,16 +45,20 @@ public class Utility : MonoBehaviour
             
         } else
         {
+
             meteorEvent = false;
             speed = .001f;
             meteor.SetActive(false);
+            // create a large explosion
+
+
+            
+            //note:  any entities NOT created with spawn() will not delete
+            entityHandler.destroy();
+            Debug.Log("destroy");
         }
 
-        // create a large explosion
-
-
-        //destroy everything
-        entityHandler.destroy();
+        
     }
 
     // Update is called once per frame

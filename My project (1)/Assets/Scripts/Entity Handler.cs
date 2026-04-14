@@ -71,6 +71,7 @@ public class EntityHandler : MonoBehaviour
 
     public void destroy()
     {
+        Debug.Log(entities);
         foreach (var entity in entities)
             {
                 GameObject.Destroy(entity);
@@ -83,6 +84,7 @@ public class EntityHandler : MonoBehaviour
     // TESTING 
     void Start()
     {
+        // spawn(0);
         if (msgMaxEntity != null)
         {
             msgMaxEntity.gameObject.SetActive(false);
