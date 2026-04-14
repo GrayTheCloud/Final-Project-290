@@ -7,10 +7,14 @@ public class Utility : MonoBehaviour
     public GameObject meteor;
     EntityHandler entityHandler;
     float speed = .01f;
-    bool meteorEvent = false;
+
+    //make true to trigger meteor event
+    public bool meteorEvent = false;
+    public GameObject cam;
     public float spawnx = -12f;
     public float spawny = 20f;
     public float spawnz = -10f;
+    float intensity = .01f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +33,11 @@ public class Utility : MonoBehaviour
         
         if (meteor.transform.position.y > 0)
         {
-            // Debug.Log("moving speed: "+ speed+ " y pos: " + meteor.transform.position.y);
+            //camera shake 
+            cam.transform.position = new Vector3(UnityEngine.Random.Range(-intensity,intensity), UnityEngine.Random.Range(-intensity,intensity), UnityEngine.Random.Range(-intensity,intensity));
+            intensity += intensity * Time.deltaTime * 2;
+
+            // move meteor
             float x = meteor.transform.position.x + (speed * Time.deltaTime);
             float y = meteor.transform.position.y - (speed * Time.deltaTime);
             float z = meteor.transform.position.z + (speed * Time.deltaTime);;
@@ -45,10 +53,13 @@ public class Utility : MonoBehaviour
             
         } else
         {
-
+            //reset 
             meteorEvent = false;
-            speed = .001f;
+            speed = .01f;
+            intensity = .01f;
+            cam.transform.position = new Vector3(0,0,0);
             meteor.SetActive(false);
+            
             // create a large explosion
 
 
