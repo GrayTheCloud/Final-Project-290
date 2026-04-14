@@ -69,6 +69,17 @@ public class EntityHandler : MonoBehaviour
         }
     }
 
+    public void destroy()
+    {
+        foreach (var entity in entities)
+            {
+                GameObject.Destroy(entity);
+            }
+
+            totalEntity = 0;
+            entities.Clear();
+    }
+
     // TESTING 
     void Start()
     {
@@ -99,14 +110,7 @@ public class EntityHandler : MonoBehaviour
         }
         else if (Keyboard.current.deleteKey.wasPressedThisFrame)
         {
-            foreach (var entity in entities)
-            {
-                GameObject.Destroy(entity);
-            }
-
-            totalEntity = 0;
-            entities.Clear();
-            
+            destroy();
         }
     }
     // }

@@ -863,6 +863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da90835f9d3299e4dab5daaf9f01e3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity
+  detectionDistance: 0
+  msgMax: {fileID: 1368816923}
 --- !u!1 &2024196011
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +895,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Utility
   meteor: {fileID: 131767627518734709}
+  spawnx: -12
+  spawny: 20
+  spawnz: -10
 --- !u!4 &2024196013
 Transform:
   m_ObjectHideFlags: 0

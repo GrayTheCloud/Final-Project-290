@@ -1,10 +1,11 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 public class Utility : MonoBehaviour
 {
     public GameObject meteor;
-    float time = 0f;
+    EntityHandler entityHandler;
     float speed = .01f;
     bool meteorEvent = false;
     public float spawnx = -12f;
@@ -14,6 +15,9 @@ public class Utility : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        EntityHandler entityHandler = this.GetComponent<EntityHandler>();
+
+        //meteor initial position + hidden
         meteor.SetActive(false);
         meteorEvent = true;
         meteor.transform.position = new Vector3(spawnx, spawny, spawnz);
@@ -21,12 +25,11 @@ public class Utility : MonoBehaviour
 
     void meteorDeleteAll()
     {
-        // meteorEvent = false;
         meteor.SetActive(true);
         
         if (meteor.transform.position.y > 0)
         {
-            Debug.Log("moving speed: "+ speed+ " y pos: " + meteor.transform.position.y);
+            // Debug.Log("moving speed: "+ speed+ " y pos: " + meteor.transform.position.y);
             float x = meteor.transform.position.x + (speed * Time.deltaTime);
             float y = meteor.transform.position.y - (speed * Time.deltaTime);
             float z = meteor.transform.position.z + (speed * Time.deltaTime);;
@@ -45,16 +48,13 @@ public class Utility : MonoBehaviour
             meteorEvent = false;
             speed = .001f;
             meteor.SetActive(false);
-            Debug.Log("floor hit");
         }
 
         // create a large explosion
 
-        // Get all objects that were created
-        // For each object created 
-        // If it is NOT in the protected list, delete it
-        // Otherwise, move on to the next iteration
 
+        //destroy everything
+        entityHandler.destroy();
     }
 
     // Update is called once per frame
