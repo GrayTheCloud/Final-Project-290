@@ -695,7 +695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1368816922
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1034,13 +1034,21 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1222419717341505098, guid: fca5cdf04807b044c85362b7a72b3c8a, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3038222362512435187, guid: fca5cdf04807b044c85362b7a72b3c8a, type: 3}
       propertyPath: m_Name
       value: cat
       objectReference: {fileID: 0}
+    - target: {fileID: 3038222362512435187, guid: fca5cdf04807b044c85362b7a72b3c8a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8730354215001049419, guid: fca5cdf04807b044c85362b7a72b3c8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.16
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 8730354215001049419, guid: fca5cdf04807b044c85362b7a72b3c8a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1094,6 +1102,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 442495827914956479, guid: b4bb97299da334440bedf789e511a6a2, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1457833639074488283, guid: b4bb97299da334440bedf789e511a6a2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -1104,7 +1116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2565983517958799173, guid: b4bb97299da334440bedf789e511a6a2, type: 3}
       propertyPath: detectionDistance
-      value: 15
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2995198080664326710, guid: b4bb97299da334440bedf789e511a6a2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1149,6 +1161,10 @@ PrefabInstance:
     - target: {fileID: 5446647415263078744, guid: b4bb97299da334440bedf789e511a6a2, type: 3}
       propertyPath: m_Name
       value: mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446647415263078744, guid: b4bb97299da334440bedf789e511a6a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -7,11 +7,22 @@ public class Prey : Entity, Animal
     public string predatorType;
     public GameObject currentPredator = null;
     public NavMeshAgent agent;
+    public Vector3[] wanderpoints;
 
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.stoppingDistance = .2f;
+        wanderpoints = new Vector3[8];
+        for (int i = 0; i < wanderpoints.Length; i++)
+        {
+            wanderpoints[i] = new Vector3(
+                UnityEngine.Random.Range(-50f, 50f),
+                0,
+                UnityEngine.Random.Range(-50f, 50f));
+
+        }
     }
 
     public void behavior()
@@ -37,6 +48,20 @@ public class Prey : Entity, Animal
         if (currentPredator != null)
         {
             flee(currentPredator.transform);
+        }
+        else
+        {
+            wander();
+        }
+    }
+
+    public void wander()
+    {
+        if (!agent.pathPending && agent.remainingDistance < agent.stoppingDistance)
+        {
+            int newDest = UnityEngine.Random.Range(0, 3);
+            agent.SetDestination(wanderpoints[newDest]);
+            Debug.Log("moving towards:" + agent.destination);
         }
     }
 }
