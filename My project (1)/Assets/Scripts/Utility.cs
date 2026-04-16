@@ -35,8 +35,11 @@ public class Utility : MonoBehaviour
         {
             //camera shake 
             cam.transform.position = new Vector3(UnityEngine.Random.Range(-intensity,intensity), UnityEngine.Random.Range(-intensity,intensity), UnityEngine.Random.Range(-intensity,intensity));
-            intensity += intensity * Time.deltaTime * 2;
-
+            if (intensity < .85f)
+            {
+                intensity += intensity * Time.deltaTime * 1.15f;
+            }
+            
             // move meteor
             float x = meteor.transform.position.x + (speed * Time.deltaTime);
             float y = meteor.transform.position.y - (speed * Time.deltaTime);
@@ -53,6 +56,16 @@ public class Utility : MonoBehaviour
             
         } else
         {
+            meteor.SetActive(false);
+
+            //camera shake slows to a stop
+            if (intensity > .01f)
+            {
+                intensity -= intensity * Time.deltaTime * 4f;
+                cam.transform.position = new Vector3(UnityEngine.Random.Range(-intensity,intensity), UnityEngine.Random.Range(-intensity,intensity), UnityEngine.Random.Range(-intensity,intensity));
+                return;
+            }
+
             //reset 
             meteorEvent = false;
             speed = .01f;
@@ -62,11 +75,9 @@ public class Utility : MonoBehaviour
             
             // create a large explosion
 
-
             
-            //note:  any entities NOT created with spawn() will not delete
+            //note: any entities NOT created with spawn() will not delete
             entityHandler.destroy();
-            Debug.Log("destroy");
         }
 
         
