@@ -106,7 +106,7 @@ public class Entity : MonoBehaviour
         foreach (var collider in colliders)
         {
             //Debug.Log($"{collider.gameObject.name} is nearby");
-            if(collider.gameObject.name == targetname)
+            if(collider.gameObject.name.Contains(targetname))
             {
                 target = collider.gameObject;
                 break;
