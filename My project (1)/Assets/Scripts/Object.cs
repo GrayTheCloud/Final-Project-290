@@ -7,7 +7,10 @@ public class Objects : Entity, Plant
 {
     public int maxObjects = 100; // limit for OBJECT spawn
     public static int totalObjects = 0;
+    [SerializeField] Material daySky;
+    [SerializeField] Material nightSky;
 
+    bool isDay = true;
     public bool MaxObjectReached(int totalObjects)
     {
         if (totalObjects > maxObjects)
@@ -38,6 +41,20 @@ public class Objects : Entity, Plant
             msgMax.gameObject.SetActive(false);
         }
     }
+
+    void Sky()
+    {
+        if (isDay)
+        {
+            RenderSettings.skybox = nightSky;
+        }
+        else
+        {
+            RenderSettings.skybox = daySky;
+        }
+        isDay = !isDay;
+    }
+
     // Spawns flowers (0 - 5) randomly and increment totalObjects. If Max reached, then throw message
     public void flower()
     {
@@ -120,4 +137,13 @@ public class Objects : Entity, Plant
             }
         }
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Sky();
+        }
+    }
+
 }
