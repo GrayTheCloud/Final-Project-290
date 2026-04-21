@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class CornerScroll : MonoBehaviour
 {
@@ -55,11 +56,11 @@ public class CornerScroll : MonoBehaviour
             }
             if (kb.mKey.isPressed)
             {
-                addLabel(labels[12]);
+                addLabel(labels[12]);             
             }
             if (kb.aKey.isPressed)
             {
-                addLabel(labels[0]);
+                addLabel(labels[0]);           
             }
             
             nextActionTime = Time.time + cooldownTime;
