@@ -7,8 +7,10 @@ public class SkyManager : MonoBehaviour
     [SerializeField] Material daySky;
     [SerializeField] Material nightSky;
 
+    // Start with day
     bool isDay = true;
 
+    // TEST
     void Update()
     {
         if (Keyboard.current.sKey.wasPressedThisFrame)
@@ -17,6 +19,7 @@ public class SkyManager : MonoBehaviour
         }
     }
 
+    // Changes to Day if night or night if day
     void Sky()
     {
         isDay = !isDay;
