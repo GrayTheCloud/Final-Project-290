@@ -34,7 +34,7 @@ public class Predator : Entity, Animal
         if (currentPrey != null)
         {
             chase(currentPrey.transform);
-            //Debug.Log(Vector3.Distance(transform.position, currentPrey.transform.position));
+            
             if( Vector3.Distance(transform.position, currentPrey.transform.position) < 1.2)
             {
                 currentPrey.SetActive(false);
@@ -44,7 +44,7 @@ public class Predator : Entity, Animal
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log($"{collision.gameObject.name} has hit");
+        
         if ( collision.gameObject.name == preyType)
         {
             collision.gameObject.SetActive(false);
