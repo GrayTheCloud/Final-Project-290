@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 337032784}
   - component: {fileID: 337032783}
   m_Layer: 5
-  m_Name: ScrollTextTMP
+  m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 702997687}
   - component: {fileID: 702997689}
   m_Layer: 5
-  m_Name: ScrollImage
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,7 +798,7 @@ GameObject:
   - component: {fileID: 922875876}
   - component: {fileID: 922875875}
   m_Layer: 5
-  m_Name: ScrollCanvas
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -979,7 +979,8 @@ GameObject:
   - component: {fileID: 1558241628}
   - component: {fileID: 1558241629}
   m_Layer: 5
-  m_Name: EmptyobjectForScrollText
+  m_Name: EmptyobjectForText
+  m_Name: msgMax
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
