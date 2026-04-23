@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -16,20 +17,20 @@ public class UMDJumpscare : MonoBehaviour
         sound.Stop();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Keyboard kb = Keyboard.current;
-        if (kb == null) return;
+    
 
-        if (kb.uKey.isPressed)
+    public IEnumerator jumpscare()
+    {
+        Debug.Log("work bitch");
+        if (!tutel.enabled)
         {
             tutel.enabled = true;
             sound.Play();
+            Debug.Log("vine boom sfx");
+            yield return new WaitForSeconds(0.25f);
         }
-        else
-        {
-            tutel.enabled = false;
-        }
+        tutel.enabled = false;
+        
+        
     }
 }

@@ -12,16 +12,9 @@ public class TwitterSound : MonoBehaviour
         sound.Stop();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       //can delete all the keyboard parts once we actually have a keyboard implemented
-        var kb = Keyboard.current;
-        if (kb == null) return;
 
-        if (kb.xKey.isPressed)
-        {
-            sound.Play();
-        } 
+    public void playSound()
+    {
+        sound.Play();
     }
 }
