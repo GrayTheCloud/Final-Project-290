@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2644002587103332724
+--- !u!1 &3993124718736479935
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6352913864932898699}
-  - component: {fileID: 1222359575223780173}
-  - component: {fileID: 2705613859168778413}
-  - component: {fileID: 7673933683213792431}
-  - component: {fileID: -5097212628036627046}
-  - component: {fileID: 1513940935421055706}
+  - component: {fileID: 1388913710354179153}
+  - component: {fileID: 5563345084107142295}
+  - component: {fileID: 7904951753757315191}
+  - component: {fileID: 817200224435466551}
+  - component: {fileID: -1784731108762196062}
+  - component: {fileID: -4581462661899894977}
   m_Layer: 0
-  m_Name: Hippo
+  m_Name: Bear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6352913864932898699
+--- !u!4 &1388913710354179153
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2644002587103332724}
+  m_GameObject: {fileID: 3993124718736479935}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2422, y: -0, z: -1.15111}
+  m_LocalPosition: {x: -2.75786, y: 0, z: -0.58042}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1222359575223780173
+--- !u!33 &5563345084107142295
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2644002587103332724}
+  m_GameObject: {fileID: 3993124718736479935}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2705613859168778413
+--- !u!23 &7904951753757315191
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2644002587103332724}
+  m_GameObject: {fileID: 3993124718736479935}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -93,13 +93,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7673933683213792431
+--- !u!65 &817200224435466551
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2644002587103332724}
+  m_GameObject: {fileID: 3993124718736479935}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -114,13 +114,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &-5097212628036627046
+--- !u!195 &-1784731108762196062
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2644002587103332724}
+  m_GameObject: {fileID: 3993124718736479935}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
@@ -136,20 +136,15 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1513940935421055706
+--- !u!114 &-4581462661899894977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2644002587103332724}
+  m_GameObject: {fileID: 3993124718736479935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 925747bc5f739854d98e41be9edd615c, type: 3}
+  m_Script: {fileID: 11500000, guid: a414e8bb5cf26c041b46787a52c636ed, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Hippo
-  detectionDistance: 0
-  msgMax: {fileID: 0}
-  preyType: 
-  currentPrey: {fileID: 0}
-  agent: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Bear

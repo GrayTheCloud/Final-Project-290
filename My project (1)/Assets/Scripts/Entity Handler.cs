@@ -17,6 +17,15 @@ public class EntityHandler : MonoBehaviour
     public Dictionary<string, GameObject> spawns = new Dictionary<string, GameObject>();
     
 
+
+    public void despawn(GameObject entity)
+    {
+        entities.Remove(entity);
+        Destroy(entity);
+        totalEntity--;
+        Debug.Log("entitiy removed");
+    }
+
     // Checks to see whether max capacity has been reached
     public bool MaxEntityReached(int totalEntity)
     {
