@@ -21,12 +21,10 @@ public class UMDJumpscare : MonoBehaviour
 
     public IEnumerator jumpscare()
     {
-        Debug.Log("work bitch");
         if (!tutel.enabled)
         {
             tutel.enabled = true;
             sound.Play();
-            Debug.Log("vine boom sfx");
             yield return new WaitForSeconds(0.25f);
         }
         tutel.enabled = false;
