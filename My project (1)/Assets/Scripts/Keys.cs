@@ -19,19 +19,29 @@ public class Keys : MonoBehaviour
     {
         //if statements of doom
         if (Keyboard.current.qKey.wasPressedThisFrame)
-        {entityHandler.spawn("quail");}
+        {
+            //entityHandler.spawn("quail");
+            }
         if (Keyboard.current.wKey.wasPressedThisFrame)
         {
             //weather change
         }
         if (Keyboard.current.eKey.wasPressedThisFrame)
-        {entityHandler.spawn("egg");}
+        {
+            //entityHandler.spawn("egg");
+            }
         if (Keyboard.current.rKey.wasPressedThisFrame)
-        {entityHandler.spawn("rock");}
+        {
+            //entityHandler.spawn("rock");
+            }
         if (Keyboard.current.tKey.wasPressedThisFrame)
-        {entityHandler.spawn("tree");}
+        {
+            //entityHandler.spawn("tree");
+            }
         if (Keyboard.current.yKey.wasPressedThisFrame)
-        {entityHandler.spawn("yak");}
+        {
+            //entityHandler.spawn("yak");
+            }
         if (Keyboard.current.uKey.wasPressedThisFrame)
         {
             //umd sfx
@@ -41,31 +51,43 @@ public class Keys : MonoBehaviour
             //open camera
         }
         if (Keyboard.current.oKey.wasPressedThisFrame)
-        {entityHandler.spawn("ostrich");}
+        {
+            //entityHandler.spawn("ostrich");
+            }
         if (Keyboard.current.pKey.wasPressedThisFrame)
-        {entityHandler.spawn("porcupine");}
+        {//entityHandler.spawn("porcupine");
+        }
         if (Keyboard.current.aKey.wasPressedThisFrame)
-        {entityHandler.spawn("alligator");}
+        {//entityHandler.spawn("alligator");
+        }
         if (Keyboard.current.sKey.wasPressedThisFrame)
         {
             //toggle day and night
         }
         if (Keyboard.current.dKey.wasPressedThisFrame)
-        {entityHandler.spawn("dog");}
+        {//entityHandler.spawn("dog");
+        }
         if (Keyboard.current.fKey.wasPressedThisFrame)
-        {entityHandler.spawn("flower");}
+        {//entityHandler.spawn("flower");
+        }
         if (Keyboard.current.gKey.wasPressedThisFrame)
-        {entityHandler.spawn("grass");}
+        {//entityHandler.spawn("grass");
+        }
         if (Keyboard.current.hKey.wasPressedThisFrame)
-        {entityHandler.spawn("hippo");}
+        {//entityHandler.spawn("hippo");
+        }
         if (Keyboard.current.jKey.wasPressedThisFrame)
-        {entityHandler.spawn("jaguar");}
+        {//entityHandler.spawn("jaguar");
+        }
         if (Keyboard.current.kKey.wasPressedThisFrame)
-        {entityHandler.spawn("kangaroo");}
+        {//entityHandler.spawn("kangaroo");
+        }
         if (Keyboard.current.lKey.wasPressedThisFrame)
-        {entityHandler.spawn("lion");}
+        {//entityHandler.spawn("lion");
+        }
         if (Keyboard.current.zKey.wasPressedThisFrame)
-        {entityHandler.spawn("zebra");}
+        {//entityHandler.spawn("zebra");
+        }
         if (Keyboard.current.xKey.wasPressedThisFrame)
         {
             //twitter sfx
@@ -73,11 +95,14 @@ public class Keys : MonoBehaviour
         if (Keyboard.current.cKey.wasPressedThisFrame)
         {entityHandler.spawn("cat");}
         if (Keyboard.current.vKey.wasPressedThisFrame)
-        {entityHandler.spawn("viper");}
+        {//entityHandler.spawn("viper");
+        }
         if (Keyboard.current.bKey.wasPressedThisFrame)
-        {entityHandler.spawn("bear");}
+        {//entityHandler.spawn("bear");
+        }
         if (Keyboard.current.nKey.wasPressedThisFrame)
-        {entityHandler.spawn("newt");}
+        {//entityHandler.spawn("newt");
+        }
         if (Keyboard.current.mKey.wasPressedThisFrame)
         {entityHandler.spawn("mouse");}
 
