@@ -16,6 +16,15 @@ public class EntityHandler : MonoBehaviour
     public GameObject[] prefabs;
     
 
+
+    public void despawn(GameObject entity)
+    {
+        entities.Remove(entity);
+        Destroy(entity);
+        totalEntity--;
+        Debug.Log("entitiy removed");
+    }
+
     // Checks to see whether max capacity has been reached
     public bool MaxEntityReached(int totalEntity)
     {
@@ -54,7 +63,6 @@ public class EntityHandler : MonoBehaviour
         // If capacity has not been reached, spawn Entity in the terrain and increment total
         if (MaxEntityReached(totalEntity) == false)
         {
-            // TESTING SPAWNING WITH CUBE RIGHT NOW. CHANGE LATER
             GameObject spawned = GameObject.Instantiate(prefabs[index]);
             spawned.transform.position = new Vector3(Random.Range(-49f, 49f), 1, Random.Range(-49f, 49f));
             entities.Add(spawned);

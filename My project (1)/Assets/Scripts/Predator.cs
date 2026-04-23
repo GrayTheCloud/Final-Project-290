@@ -9,9 +9,13 @@ public class Predator : Entity, Animal
     public NavMeshAgent agent;
     public Vector3[] wanderpoints;
     private bool preyDetected;
+    public GameObject exclam;
+
 
     private void Start()
     {
+        handler = FindFirstObjectByType<EntityHandler>();
+        exclam?.SetActive(false);
         preyDetected = false;
         agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = .2f;
@@ -47,13 +51,22 @@ public class Predator : Entity, Animal
         currentPrey = detectNearby(preyType);
         if (currentPrey != null)
         {
+            if (!exclam.activeSelf)
+            {
+                exclam.SetActive(true);
+            }
             chase(currentPrey.transform);
             if( Vector3.Distance(transform.position, currentPrey.transform.position) < 1.2)
             {
-                currentPrey.SetActive(false);
+                //currentPrey.SetActive(false);
+                handler.despawn(currentPrey);
             }
         } else
         {
+            if (exclam.activeSelf)
+            {
+                exclam.SetActive(false);
+            }
             wander();
         }
     }
