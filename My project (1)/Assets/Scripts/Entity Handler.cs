@@ -13,7 +13,8 @@ public class EntityHandler : MonoBehaviour
     // The text that holds error msg and will be shown when totalEntity > max capacity
     public TextMeshProUGUI msgMaxEntity;
     public List<GameObject> entities = new List<GameObject>();
-    public GameObject[] prefabs;
+    //public GameObject[] prefabs;
+    public Dictionary<string, GameObject> spawns = new Dictionary<string, GameObject>();
     
 
     // Checks to see whether max capacity has been reached
@@ -49,13 +50,13 @@ public class EntityHandler : MonoBehaviour
     }
 
     // Spawn function to create and spawn all entities 
-    public void spawn(int index)
+    public void spawn(string x)
     {
         // If capacity has not been reached, spawn Entity in the terrain and increment total
         if (MaxEntityReached(totalEntity) == false)
         {
             // TESTING SPAWNING WITH CUBE RIGHT NOW. CHANGE LATER
-            GameObject spawned = GameObject.Instantiate(prefabs[index]);
+            GameObject spawned = GameObject.Instantiate(spawns[x]);
             spawned.transform.position = new Vector3(Random.Range(-49f, 49f), 1, Random.Range(-49f, 49f));
             entities.Add(spawned);
             totalEntity++;
@@ -71,7 +72,7 @@ public class EntityHandler : MonoBehaviour
 
     public void destroy()
     {
-        Debug.Log(entities);
+        //Debug.Log(entities);
         foreach (var entity in entities)
             {
                 GameObject.Destroy(entity);
@@ -84,6 +85,9 @@ public class EntityHandler : MonoBehaviour
     // TESTING 
     void Start()
     {
+        //spawns.Add("alligator", Resources.Load<GameObject>("Prefabs/alligator"));
+        spawns.Add("cat", Resources.Load<GameObject>("Prefabs/cat"));
+        spawns.Add("mouse", Resources.Load<GameObject>("Prefabs/mouse"));
         // spawn(0);
         if (msgMaxEntity != null)
         {
@@ -96,7 +100,7 @@ public class EntityHandler : MonoBehaviour
     {
         if (Keyboard.current.cKey.wasPressedThisFrame)
         {
-            spawn(0);
+            //spawn(0);
             if (MaxEntityReached(totalEntity))
             {
                 StartCoroutine(MaxEntityThrowMSG());
@@ -104,7 +108,7 @@ public class EntityHandler : MonoBehaviour
         }
         else if (Keyboard.current.mKey.wasPressedThisFrame)
         {
-            spawn(1);
+            //spawn(1);
             if (MaxEntityReached(totalEntity))
             {
                 StartCoroutine(MaxEntityThrowMSG());

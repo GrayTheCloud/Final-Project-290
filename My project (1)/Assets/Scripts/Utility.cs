@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,8 +8,6 @@ public class Utility : MonoBehaviour
     public GameObject meteor;
     EntityHandler entityHandler;
     float speed = .01f;
-
-    //make true to trigger meteor event
     public bool meteorEvent = false;
     public GameObject cam;
     public float spawnx = -12f;
@@ -23,15 +22,15 @@ public class Utility : MonoBehaviour
 
         //meteor initial position + hidden
         meteor.SetActive(false);
-        meteorEvent = true;
         meteor.transform.position = new Vector3(spawnx, spawny, spawnz);
     }
 
-    void meteorDeleteAll()
+    public IEnumerator meteorDeleteAll()
     {
+        meteorEvent = true;
         meteor.SetActive(true);
         
-        if (meteor.transform.position.y > 0)
+        while (meteor.transform.position.y > 0)
         {
             //camera shake 
             cam.transform.position = new Vector3(UnityEngine.Random.Range(-intensity,intensity), UnityEngine.Random.Range(-intensity,intensity), UnityEngine.Random.Range(-intensity,intensity));
@@ -53,41 +52,36 @@ public class Utility : MonoBehaviour
             {
                 speed += 1;
             }
-            
-        } else
-        {
+            yield return null;
+        }
+
             meteor.SetActive(false);
+            //note: any entities NOT created with spawn() will not delete
+            entityHandler.destroy();
+
+            // create a large explosion
 
             //camera shake slows to a stop
-            if (intensity > .01f)
+            while (intensity > .01f)
             {
                 intensity -= intensity * Time.deltaTime * 4f;
                 cam.transform.position = new Vector3(UnityEngine.Random.Range(-intensity,intensity), UnityEngine.Random.Range(-intensity,intensity), UnityEngine.Random.Range(-intensity,intensity));
-                return;
+                yield return null;
             }
 
             //reset 
-            meteorEvent = false;
+            
             speed = .01f;
             intensity = .01f;
             cam.transform.position = new Vector3(0,0,0);
             meteor.SetActive(false);
+            meteor.transform.position = new Vector3(spawnx, spawny, spawnz);
             
-            // create a large explosion
-
-            
-            //note: any entities NOT created with spawn() will not delete
-            entityHandler.destroy();
-        }
-
-        
+            meteorEvent = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (meteorEvent) {
-            meteorDeleteAll();
-        }
     }
 }

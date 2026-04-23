@@ -895,8 +895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da90835f9d3299e4dab5daaf9f01e3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity
-  detectionDistance: 0
-  msgMax: {fileID: 1368816923}
 --- !u!1 &2024196011
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,6 +906,7 @@ GameObject:
   - component: {fileID: 2024196013}
   - component: {fileID: 2024196012}
   - component: {fileID: 2024196014}
+  - component: {fileID: 2024196015}
   m_Layer: 0
   m_Name: utilities
   m_TagString: Untagged
@@ -965,6 +964,18 @@ MonoBehaviour:
   entities: []
   prefabs:
   - {fileID: 5446647415263078744, guid: b4bb97299da334440bedf789e511a6a2, type: 3}
+--- !u!114 &2024196015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024196011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9292467425ada148a5856a2f1065071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Keys
 --- !u!1 &2102843998
 GameObject:
   m_ObjectHideFlags: 0
