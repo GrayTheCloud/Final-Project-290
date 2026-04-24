@@ -56,7 +56,6 @@ public class Predator : Entity, Animal
                 exclam.SetActive(true);
             }
             chase(currentPrey.transform);
-            
             if( Vector3.Distance(transform.position, currentPrey.transform.position) < 1.2)
             {
                 //currentPrey.SetActive(false);

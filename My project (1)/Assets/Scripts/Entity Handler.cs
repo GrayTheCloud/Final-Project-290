@@ -13,8 +13,7 @@ public class EntityHandler : MonoBehaviour
     // The text that holds error msg and will be shown when totalEntity > max capacity
     public TextMeshProUGUI msgMaxEntity;
     public List<GameObject> entities = new List<GameObject>();
-    //public GameObject[] prefabs;
-    public Dictionary<string, GameObject> spawns = new Dictionary<string, GameObject>();
+    public Dictionary<string, GameObject> prefabs ;
     
 
 
@@ -65,7 +64,7 @@ public class EntityHandler : MonoBehaviour
         if (MaxEntityReached(totalEntity) == false)
         {
             // TESTING SPAWNING WITH CUBE RIGHT NOW. CHANGE LATER
-            GameObject spawned = GameObject.Instantiate(spawns[x]);
+            GameObject spawned = GameObject.Instantiate(prefabs[x]);
             spawned.transform.position = new Vector3(Random.Range(-49f, 49f), 1, Random.Range(-49f, 49f));
             entities.Add(spawned);
             totalEntity++;
@@ -94,9 +93,11 @@ public class EntityHandler : MonoBehaviour
     // TESTING 
     void Start()
     {
+
+        prefabs = new Dictionary<string, GameObject>();
         //spawns.Add("alligator", Resources.Load<GameObject>("Prefabs/alligator"));
-        spawns.Add("cat", Resources.Load<GameObject>("Prefabs/cat"));
-        spawns.Add("mouse", Resources.Load<GameObject>("Prefabs/mouse"));
+        prefabs.Add("cat", Resources.Load<GameObject>("Prefabs/Predator/cat"));
+        prefabs.Add("mouse", Resources.Load<GameObject>("Prefabs/Prey/mouse"));
         // spawn(0);
         if (msgMaxEntity != null)
         {

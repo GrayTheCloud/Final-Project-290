@@ -6,13 +6,13 @@ public class Keys : MonoBehaviour
 {
     Utility util;
     EntityHandler entityHandler;
-    
+    Dictionary<string, GameObject> dic;
 
     void Start()
     {
-        // entityHandler = this.GetComponent<EntityHandler>();
+        entityHandler = this.GetComponent<EntityHandler>();
         util = this.GetComponent<Utility>();  
-        Dictionary<string, GameObject> dic =  entityHandler.spawns;
+        dic =  entityHandler.prefabs;
     }
 
     void keyCheck()
