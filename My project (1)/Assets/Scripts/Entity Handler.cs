@@ -13,8 +13,17 @@ public class EntityHandler : MonoBehaviour
     // The text that holds error msg and will be shown when totalEntity > max capacity
     public TextMeshProUGUI msgMaxEntity;
     public List<GameObject> entities = new List<GameObject>();
-    public GameObject[] prefabs;
+    public Dictionary<string, GameObject> prefabs ;
     
+
+
+    public void despawn(GameObject entity)
+    {
+        entities.Remove(entity);
+        Destroy(entity);
+        totalEntity--;
+        Debug.Log("entitiy removed");
+    }
 
     // Checks to see whether max capacity has been reached
     public bool MaxEntityReached(int totalEntity)
@@ -49,13 +58,13 @@ public class EntityHandler : MonoBehaviour
     }
 
     // Spawn function to create and spawn all entities 
-    public void spawn(int index)
+    public void spawn(string x)
     {
         // If capacity has not been reached, spawn Entity in the terrain and increment total
         if (MaxEntityReached(totalEntity) == false)
         {
             // TESTING SPAWNING WITH CUBE RIGHT NOW. CHANGE LATER
-            GameObject spawned = GameObject.Instantiate(prefabs[index]);
+            GameObject spawned = GameObject.Instantiate(prefabs[x]);
             spawned.transform.position = new Vector3(Random.Range(-49f, 49f), 1, Random.Range(-49f, 49f));
             entities.Add(spawned);
             totalEntity++;
@@ -69,9 +78,27 @@ public class EntityHandler : MonoBehaviour
         }
     }
 
+    public void destroy()
+    {
+        //Debug.Log(entities);
+        foreach (var entity in entities)
+            {
+                GameObject.Destroy(entity);
+            }
+
+            totalEntity = 0;
+            entities.Clear();
+    }
+
     // TESTING 
     void Start()
     {
+
+        prefabs = new Dictionary<string, GameObject>();
+        //spawns.Add("alligator", Resources.Load<GameObject>("Prefabs/alligator"));
+        prefabs.Add("cat", Resources.Load<GameObject>("Prefabs/Predator/cat"));
+        prefabs.Add("mouse", Resources.Load<GameObject>("Prefabs/Prey/mouse"));
+        // spawn(0);
         if (msgMaxEntity != null)
         {
             msgMaxEntity.gameObject.SetActive(false);
@@ -83,7 +110,7 @@ public class EntityHandler : MonoBehaviour
     {
         if (Keyboard.current.cKey.wasPressedThisFrame)
         {
-            spawn(0);
+            //spawn(0);
             if (MaxEntityReached(totalEntity))
             {
                 StartCoroutine(MaxEntityThrowMSG());
@@ -91,7 +118,7 @@ public class EntityHandler : MonoBehaviour
         }
         else if (Keyboard.current.mKey.wasPressedThisFrame)
         {
-            spawn(1);
+            //spawn(1);
             if (MaxEntityReached(totalEntity))
             {
                 StartCoroutine(MaxEntityThrowMSG());
@@ -99,14 +126,7 @@ public class EntityHandler : MonoBehaviour
         }
         else if (Keyboard.current.deleteKey.wasPressedThisFrame)
         {
-            foreach (var entity in entities)
-            {
-                GameObject.Destroy(entity);
-            }
-
-            totalEntity = 0;
-            entities.Clear();
-            
+            destroy();
         }
     }
     // }

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Entity : MonoBehaviour
 {
+    public EntityHandler handler;
     public float detectionDistance;
 
     // Move these to an entity handler class {
@@ -73,6 +74,8 @@ public class Entity : MonoBehaviour
             {
                 msgMax.gameObject.SetActive(false);
             }
+
+            handler = FindFirstObjectByType<EntityHandler>();
         }
 
         // TESTING 

@@ -3,12 +3,15 @@ using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Composites;
 public class Objects : Entity, Plant
 {
     public int maxObjects = 100; // limit for OBJECT spawn
     public static int totalObjects = 0;
     [SerializeField] Material daySky;
     [SerializeField] Material nightSky;
+
+    public TextMeshPro msgMax;
 
     bool isDay = true;
     public bool MaxObjectReached(int totalObjects)
