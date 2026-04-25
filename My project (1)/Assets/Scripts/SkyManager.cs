@@ -10,17 +10,8 @@ public class SkyManager : MonoBehaviour
     // Start with day
     bool isDay = true;
 
-    // TEST
-    void Update()
-    {
-        if (Keyboard.current.sKey.wasPressedThisFrame)
-        {
-            Sky();
-        }
-    }
-
     // Changes to Day if night or night if day
-    void Sky()
+    public void Sky()
     {
         isDay = !isDay;
         RenderSettings.skybox = isDay ? daySky : nightSky;

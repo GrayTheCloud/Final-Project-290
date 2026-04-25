@@ -12,6 +12,13 @@ public class TwitterSound : MonoBehaviour
         sound.Stop();
     }
 
+    void Update()
+    {
+        if (Keyboard.current.xKey.wasPressedThisFrame)
+        {
+            playSound();
+        }
+    }
 
     public void playSound()
     {

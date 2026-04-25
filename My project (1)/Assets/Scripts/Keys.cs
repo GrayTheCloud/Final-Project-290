@@ -8,11 +8,18 @@ public class Keys : MonoBehaviour
     EntityHandler entityHandler;
     Dictionary<string, GameObject> dic;
 
+    private UMDJumpscare jumpscareScript;
+    private TwitterSound playSoundScript;
+    [SerializeField] SkyManager skyManager;
+
     void Start()
     {
         entityHandler = this.GetComponent<EntityHandler>();
         util = this.GetComponent<Utility>();  
         dic =  entityHandler.prefabs;
+        jumpscareScript = GetComponent<UMDJumpscare>();
+        playSoundScript = GetComponent<TwitterSound>();
+        skyManager = FindObjectOfType<SkyManager>();
     }
 
     void keyCheck()
@@ -42,10 +49,10 @@ public class Keys : MonoBehaviour
         {
             entityHandler.spawn("yak");
             }
-        if (Keyboard.current.uKey.wasPressedThisFrame)
-        {
-            //umd sfx
-        }
+        //if (Keyboard.current.uKey.wasPressedThisFrame)
+        //{
+             //StartCoroutine(jumpscareScript.jumpscare());
+        //}
         if (Keyboard.current.iKey.wasPressedThisFrame)
         {
             //open camera
@@ -64,7 +71,7 @@ public class Keys : MonoBehaviour
         }
         if (Keyboard.current.sKey.wasPressedThisFrame)
         {
-            //toggle day and night
+            skyManager.Sky();
         }
         if (Keyboard.current.dKey.wasPressedThisFrame)
         {
@@ -96,10 +103,10 @@ public class Keys : MonoBehaviour
         if (Keyboard.current.zKey.wasPressedThisFrame)
         {entityHandler.spawn("zebra");
         }
-        if (Keyboard.current.xKey.wasPressedThisFrame)
-        {
-            //twitter sfx
-        }
+        //if (Keyboard.current.xKey.wasPressedThisFrame)
+        //{
+            //playSoundScript.playSound();
+        //}
         if (Keyboard.current.cKey.wasPressedThisFrame)
         {entityHandler.spawn("cat");}
         if (Keyboard.current.vKey.wasPressedThisFrame)

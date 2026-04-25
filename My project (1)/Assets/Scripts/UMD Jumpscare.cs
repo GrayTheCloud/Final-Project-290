@@ -17,14 +17,22 @@ public class UMDJumpscare : MonoBehaviour
         sound.Stop();
     }
 
-    
+    void Update()
+    {
+        if (Keyboard.current.uKey.wasPressedThisFrame)
+        {
+            StartCoroutine(jumpscare());
+        }
+    }
 
     public IEnumerator jumpscare()
     {
+        Debug.Log("work bitch");
         if (!tutel.enabled)
         {
             tutel.enabled = true;
             sound.Play();
+            Debug.Log("vine boom sfx");
             yield return new WaitForSeconds(0.25f);
         }
         tutel.enabled = false;
