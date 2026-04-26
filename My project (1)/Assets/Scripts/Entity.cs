@@ -4,15 +4,15 @@ using System.Collections;
 using TMPro;
 using UnityEngine.InputSystem;
 
-public class Entity : MonoBehaviour
+public abstract class Entity : MonoBehaviour
 {
     public float detectionDistance;
 
     // Move these to an entity handler class {
         // Tracks total # of entities spawned
-        public static int totalEntity = 0;
+        public int totalEntity = 0;
         // The text that holds error msg and will be shown when totalEntity > max capacity
-        public TextMeshProUGUI msgMax;
+        public TextMeshProUGUI msgMaxEntity;
 
         // Checks to see whether max capacity has been reached
         public bool MaxEntityReached(int totalEntity)
@@ -32,17 +32,17 @@ public class Entity : MonoBehaviour
         {
             string msg = "Max Entity reached. Can not spawn anymore. Please delete Entities before trying again.";
             // Set the error message to msg and show the text
-            if (msgMax != null)
+            if (msgMaxEntity != null)
             {
-                msgMax.text = msg;
-                msgMax.gameObject.SetActive(true);
+                msgMaxEntity.text = msg;
+                msgMaxEntity.gameObject.SetActive(true);
             }
             // Leave the text shown for 2 seconds
             yield return new WaitForSeconds(2f);
             // Hide the message now that 2 seconds have passed
-            if (msgMax != null)
+            if (msgMaxEntity != null)
             {
-                msgMax.gameObject.SetActive(false);
+                msgMaxEntity.gameObject.SetActive(false);
             }
         }
 
@@ -69,9 +69,9 @@ public class Entity : MonoBehaviour
         // TESTING 
         void Start()
         {
-            if (msgMax == null)
+            if (msgMaxEntity != null)
             {
-                msgMax.gameObject.SetActive(false);
+                msgMaxEntity.gameObject.SetActive(false);
             }
         }
 
@@ -106,7 +106,7 @@ public class Entity : MonoBehaviour
         foreach (var collider in colliders)
         {
             //Debug.Log($"{collider.gameObject.name} is nearby");
-            if(collider.gameObject.name.Contains(targetname))
+            if(collider.gameObject.name == targetname)
             {
                 target = collider.gameObject;
                 break;
