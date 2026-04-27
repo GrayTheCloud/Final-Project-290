@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
@@ -6,6 +7,13 @@ using System.Collections;
 public class CornerScroll : MonoBehaviour
 {
 
+=======
+using TMPro;
+using UnityEngine;
+
+public class CornerScroll : MonoBehaviour
+{
+>>>>>>> Stashed changes
     public TMP_Text scrollText;
 
     public float cooldownTime = 0.5f;
@@ -14,7 +22,11 @@ public class CornerScroll : MonoBehaviour
     string[] scroll = new string[4];
 
     public string[] labels = {"A:Alligator", "B.Bear", "C.Cat", "D.Dog", "E.Egg", "F.Flower",
+<<<<<<< Updated upstream
     "G.Grass", "H.Hippo", "I.Eye", "J.Jaguar", "K.Kangaroo", "L.Lion", "M.Mouse",
+=======
+    "G.Grass", "H.Hippo", "I.I", "J.Jaguar", "K.Kangaroo", "L.Lion", "M.Mouse",
+>>>>>>> Stashed changes
     "N.Newt", "O.Ostrich", "P.Porcupine","Q.Quail", "R.Rock", "S.Sky",
     "T.Tree", "U.UMD", "V.Viper", "W.Weather", "X.X", "Y.Yak", "Z.Zebra"};
 
@@ -41,6 +53,7 @@ public class CornerScroll : MonoBehaviour
     }
 
     // Update is called once per frame
+<<<<<<< Updated upstream
     void Update()
     {
         var kb = Keyboard.current;
@@ -66,4 +79,31 @@ public class CornerScroll : MonoBehaviour
             nextActionTime = Time.time + cooldownTime;
         }
     }
+=======
+    // void Update()
+    // {
+    //     var kb = Keyboard.current;
+    //     if (kb == null)
+    //     {
+    //         return;
+    //     }
+    //     if (Time.time >= nextActionTime)
+    //     {
+    //         if (kb.cKey.isPressed)
+    //         {
+    //             addLabel(labels[2]);
+    //         }
+    //         if (kb.mKey.isPressed)
+    //         {
+    //             addLabel(labels[12]);             
+    //         }
+    //         if (kb.aKey.isPressed)
+    //         {
+    //             addLabel(labels[0]);           
+    //         }
+            
+    //         nextActionTime = Time.time + cooldownTime;
+    //     }
+    // }
+>>>>>>> Stashed changes
 }
