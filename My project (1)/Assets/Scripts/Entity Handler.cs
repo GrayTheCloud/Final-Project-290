@@ -95,9 +95,27 @@ public class EntityHandler : MonoBehaviour
     {
 
         prefabs = new Dictionary<string, GameObject>();
-        //spawns.Add("alligator", Resources.Load<GameObject>("Prefabs/alligator"));
+        
+        prefabs.Add("alligator", Resources.Load<GameObject>("Prefabs/Predator/alligator"));
+        prefabs.Add("bear", Resources.Load<GameObject>("Prefabs/Predator/Bear"));
         prefabs.Add("cat", Resources.Load<GameObject>("Prefabs/Predator/cat"));
+        prefabs.Add("dog", Resources.Load<GameObject>("Prefabs/Predator/Dog"));
+        //egg not in game files
+        //flower not in game files
+        //grass not in game files
+        prefabs.Add("hippo", Resources.Load<GameObject>("Prefabs/Predator/Hippo"));
+        prefabs.Add("jaguar", Resources.Load<GameObject>("Prefabs/Predator/Jaguar"));
+        prefabs.Add("kangaroo", Resources.Load<GameObject>("Prefabs/Prey/Kangaroo"));
+        prefabs.Add("lion", Resources.Load<GameObject>("Prefabs/Predator/Lion"));
         prefabs.Add("mouse", Resources.Load<GameObject>("Prefabs/Prey/mouse"));
+        prefabs.Add("newt", Resources.Load<GameObject>("Prefabs/Prey/Newt"));
+        prefabs.Add("ostrich", Resources.Load<GameObject>("Prefabs/Prey/Ostrich"));
+        prefabs.Add("porcupine", Resources.Load<GameObject>("Prefabs/Prey/Porcupine"));
+        prefabs.Add("quail", Resources.Load<GameObject>("Prefabs/Prey/Quail"));
+        // tree not in game files
+        prefabs.Add("viper", Resources.Load<GameObject>("Prefabs/Predator/Viper"));
+        prefabs.Add("yak", Resources.Load<GameObject>("Prefabs/Prey/Yak"));
+        prefabs.Add("zebra", Resources.Load<GameObject>("Prefabs/Prey/Zebra"));
         // spawn(0);
         if (msgMaxEntity != null)
         {
