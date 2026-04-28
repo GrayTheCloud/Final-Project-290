@@ -76,6 +76,11 @@ public class Entity : MonoBehaviour
             }
 
             handler = FindFirstObjectByType<EntityHandler>();
+            if(detectionDistance == 0)
+        {
+            detectionDistance = 10;
+        }
+            
         }
 
         // TESTING 

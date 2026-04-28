@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03803edd377cae449773c1535e3d3c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cat
+  handler: {fileID: 0}
   detectionDistance: 15
   msgMax: {fileID: 0}
   preyType: mouse
@@ -169,6 +170,10 @@ PrefabInstance:
     - target: {fileID: 1644321486015744569, guid: 3fc67e65716d6374e9b4510edfebfcf8, type: 3}
       propertyPath: m_Name
       value: exclamation point
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644321486015744569, guid: 3fc67e65716d6374e9b4510edfebfcf8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8622440695695565990, guid: 3fc67e65716d6374e9b4510edfebfcf8, type: 3}
       propertyPath: m_LocalPosition.x
