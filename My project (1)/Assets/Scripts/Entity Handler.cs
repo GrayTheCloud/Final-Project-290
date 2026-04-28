@@ -100,9 +100,9 @@ public class EntityHandler : MonoBehaviour
         prefabs.Add("bear", Resources.Load<GameObject>("Prefabs/Predator/Bear"));
         prefabs.Add("cat", Resources.Load<GameObject>("Prefabs/Predator/cat"));
         prefabs.Add("dog", Resources.Load<GameObject>("Prefabs/Predator/Dog"));
-        //egg not in game files
-        //flower not in game files
-        //grass not in game files
+        prefabs.Add("egg", Resources.Load<GameObject>("Prefabs/Objects/egg"));
+        prefabs.Add("egg", Resources.Load<GameObject>("Prefabs/Objects/flower"));
+        prefabs.Add("egg", Resources.Load<GameObject>("Prefabs/Objects/grass"));
         prefabs.Add("hippo", Resources.Load<GameObject>("Prefabs/Predator/Hippo"));
         prefabs.Add("jaguar", Resources.Load<GameObject>("Prefabs/Predator/Jaguar"));
         prefabs.Add("kangaroo", Resources.Load<GameObject>("Prefabs/Prey/Kangaroo"));
@@ -112,7 +112,7 @@ public class EntityHandler : MonoBehaviour
         prefabs.Add("ostrich", Resources.Load<GameObject>("Prefabs/Prey/Ostrich"));
         prefabs.Add("porcupine", Resources.Load<GameObject>("Prefabs/Prey/Porcupine"));
         prefabs.Add("quail", Resources.Load<GameObject>("Prefabs/Prey/Quail"));
-        // tree not in game files
+        prefabs.Add("egg", Resources.Load<GameObject>("Prefabs/Objects/roundtree"));
         prefabs.Add("viper", Resources.Load<GameObject>("Prefabs/Predator/Viper"));
         prefabs.Add("yak", Resources.Load<GameObject>("Prefabs/Prey/Yak"));
         prefabs.Add("zebra", Resources.Load<GameObject>("Prefabs/Prey/Zebra"));

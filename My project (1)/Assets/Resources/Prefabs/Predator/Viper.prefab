@@ -34,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 6874910365018047067}
   - {fileID: 5380757355548851111}
+  - {fileID: 6016209737033269364}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8818298395364371951
@@ -94,7 +95,7 @@ MonoBehaviour:
   handler: {fileID: 0}
   detectionDistance: 0
   msgMax: {fileID: 0}
-  preyType: 
+  preyType: ostrich
   currentPrey: {fileID: 0}
   agent: {fileID: 0}
   wanderpoints: []
@@ -129,9 +130,6 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6016209737033269364}
-  m_Father: {fileID: 0}
   m_Children: []
   m_Father: {fileID: 6013215486127108216}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -241,18 +239,46 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8301103040693757294}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3054a20aa7bd0144a1c1c9f3b91dd62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Viper
-  handler: {fileID: 0}
-  detectionDistance: 0
-  msgMax: {fileID: 0}
-  preyType: ostrich
-  currentPrey: {fileID: 0}
-  agent: {fileID: 0}
-  wanderpoints: []
-  exclam: {fileID: 3604290845937889003}
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &2653973406165443794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,54 +336,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fc67e65716d6374e9b4510edfebfcf8, type: 3}
---- !u!1 &3604290845937889003 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1644321486015744569, guid: 3fc67e65716d6374e9b4510edfebfcf8, type: 3}
-  m_PrefabInstance: {fileID: 2653973406165443794}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6016209737033269364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8622440695695565990, guid: 3fc67e65716d6374e9b4510edfebfcf8, type: 3}
   m_PrefabInstance: {fileID: 2653973406165443794}
   m_PrefabAsset: {fileID: 0}
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 3856830374845270463, guid: 80ceaf54975119349b33d7c3b8714a77, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
