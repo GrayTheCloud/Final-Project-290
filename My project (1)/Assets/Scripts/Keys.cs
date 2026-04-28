@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.Windows.WebCam;
 
 public class Keys : MonoBehaviour
 {
     Utility util;
     EntityHandler entityHandler;
+    public GameObject camBtn;
+    CamBtn wcam;
     Dictionary<string, GameObject> dic;
 
     private UMDJumpscare jumpscareScript;
@@ -14,6 +17,8 @@ public class Keys : MonoBehaviour
 
     void Start()
     {
+        wcam = camBtn.GetComponent<CamBtn>();
+        
         entityHandler = this.GetComponent<EntityHandler>();
         util = this.GetComponent<Utility>();  
         dic =  entityHandler.prefabs;
@@ -56,6 +61,14 @@ public class Keys : MonoBehaviour
         if (Keyboard.current.iKey.wasPressedThisFrame)
         {
             //open camera
+            wcam.camon = !(wcam.camon);
+            if (wcam.camon)
+            {
+                wcam.RestartCam();
+            } else
+            {
+                wcam.quad.SetActive(false);
+            }
         }
         if (Keyboard.current.oKey.wasPressedThisFrame)
         {
