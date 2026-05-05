@@ -28,7 +28,7 @@ public class EntityHandler : MonoBehaviour
     // Checks to see whether max capacity has been reached
     public bool MaxEntityReached(int totalEntity)
     {
-        if (totalEntity > 10)
+        if (totalEntity > 1000)
         {
             return true;
         }
