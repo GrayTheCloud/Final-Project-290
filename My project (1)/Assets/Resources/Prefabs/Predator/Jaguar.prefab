@@ -1072,7 +1072,7 @@ MonoBehaviour:
   handler: {fileID: 0}
   detectionDistance: 0
   msgMax: {fileID: 0}
-  preyType: 
+  preyType: Yak
   currentPrey: {fileID: 0}
   agent: {fileID: 0}
   wanderpoints: []

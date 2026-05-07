@@ -459,7 +459,7 @@ MonoBehaviour:
   detectionDistance: 0
   msgMax: {fileID: 0}
   maxAnimals: 100
-  predatorType: 
+  predatorType: Viper
   currentPredator: {fileID: 0}
   agent: {fileID: 0}
   wanderpoints: []
